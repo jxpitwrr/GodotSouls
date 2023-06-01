@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dx0jnivwrl6y5"
+path="res://.godot/imported/ImageToStl.com_espada.obj-892c31d0ff53c53a5a5c38ad9a637830.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ImageToStl.com_espada.obj-892c31d0ff53c53a5a5c38ad9a637830.mesh"]
+
+source_file="res://ImageToStl.com_espada.obj"
+dest_files=["res://.godot/imported/ImageToStl.com_espada.obj-892c31d0ff53c53a5a5c38ad9a637830.mesh", "res://.godot/imported/ImageToStl.com_espada.obj-892c31d0ff53c53a5a5c38ad9a637830.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
