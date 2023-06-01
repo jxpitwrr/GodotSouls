@@ -1,8 +1,9 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 2.5
+const JUMP_VELOCITY = 3.0
+var melee_damage = 50
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -20,12 +21,10 @@ func melee():
 			melee_anim.play("Attack")
 			melee_anim.queue("Return")
 			# enable this after creating the enemy group and shit
-		#if melee_anim.current_animation == "Attack":
-			#for body in hitbox.get_overlapping_bodies():
-				#if body.is_in_group("Enemy"):
-					#b.global_transform.origin = body.global_transform.origin
-					#get_tree().get_root().add_child(b)
-					#body.health -= melee_damage
+		if melee_anim.current_animation == "Attack":
+			for body in hitbox.get_overlapping_bodies():
+				if body.is_in_group("Enemy"):
+					body.health -= melee_damage
 		
 func _unhandled_input(event):
 	melee()

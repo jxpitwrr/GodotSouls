@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://c80ar2ef626tf"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_y4tmj"]
+[ext_resource type="Texture2D" uid="uid://bim8uneknpiso" path="res://Souls.webp" id="2_kkaln"]
+[ext_resource type="FontFile" uid="uid://dec7wsj2hgl87" path="res://OptimusPrinceps.ttf" id="3_whnod"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbuni"]
+font = ExtResource("3_whnod")
+font_size = 85
+font_color = Color(0.631373, 0.0196078, 0.00392157, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y4tmj")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.5
+offset_top = -326.5
+offset_right = 578.5
+offset_bottom = 326.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kkaln")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.543
+anchor_right = 0.5
+anchor_bottom = 0.543
+offset_left = -24.5
+offset_top = -32.864
+offset_right = 24.5
+offset_bottom = 33.136
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+text = "Jugar
+"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+text = "Salir"
+
+[node name="TitleCard" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.502056
+anchor_top = 0.353901
+anchor_right = 0.502056
+anchor_bottom = 0.353901
+offset_left = -230.368
+offset_top = -59.328
+offset_right = 230.632
+offset_bottom = 59.672
+grow_horizontal = 2
+grow_vertical = 2
+text = "CTN SOULS"
+label_settings = SubResource("LabelSettings_wbuni")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
